@@ -1,11 +1,8 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.ViaCepClient;
-import com.example.demo.model.Cep;
 import com.example.demo.model.Encomenda;
 import com.example.demo.repository.EncomendaRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.DecimalFormat;
-import java.util.Optional;
 
 @Controller
 
@@ -33,7 +29,7 @@ public class encomendaController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String salvar(Encomenda encomenda) {
         er.save(encomenda);
-        Long id = encomenda.getId();
+        long id = encomenda.getId();
         return "redirect:/consultaRealizada/" + id;
     }
 
