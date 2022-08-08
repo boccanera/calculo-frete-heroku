@@ -19,7 +19,7 @@ public class encomendaController {
 
     @Autowired
     private EncomendaRepository er;
-
+    {}
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
         return "index";
