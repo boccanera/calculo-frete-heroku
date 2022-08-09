@@ -25,7 +25,7 @@ public class encomendaController {
     }
 
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String salvar(Encomenda encomenda) {
         er.save(encomenda);
         long id = encomenda.getId();
