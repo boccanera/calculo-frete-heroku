@@ -30,13 +30,13 @@ public class EncomendaController {
     public String salvar(Encomenda encomenda) {
         er.save(encomenda);
         long id = encomenda.getId();
-        return "redirect:/consultaRealizada/" + id;
+        return "redirect:consultaRealizada/" + id;
     }
 
     @RequestMapping(value = "/consultaRealizada/{id}", method = RequestMethod.GET)
     public ModelAndView resultadoCalculo(@PathVariable("id") long id) {
         Encomenda encomenda = er.findById(id);
-        ModelAndView mv = new ModelAndView("/resultadoCalculo");
+        ModelAndView mv = new ModelAndView("resultadoCalculo");
         mv.addObject("encomenda", encomenda);
 
         int dias = encomenda.calculoDias(encomenda.getCepOrigem(), encomenda.getCepDestino());
