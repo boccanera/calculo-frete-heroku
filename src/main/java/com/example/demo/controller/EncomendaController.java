@@ -14,12 +14,13 @@ import java.text.DecimalFormat;
 
 @Controller
 
-public class encomendaController {
+public class EncomendaController {
 
 
     @Autowired
     private EncomendaRepository er;
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+
+    @RequestMapping("/")
     public String index() {
         return "index";
     }
