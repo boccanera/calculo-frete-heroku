@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles.css">
 
     <header>
@@ -24,29 +24,29 @@
         <div class="form-container">
             <div class="form1">
                 <h2 id="resultadoDaConsultaH2">Resultado da Consulta</h2>
-<div th:each="encomenda : ${encomenda}" class="container detalhesEvento">
+                <div th:each="encomenda : ${encomenda}" class="container detalhesEvento">
 
-    <div class="row">
+                    <div class="row">
 
-        <p>Nome: <span th:text="${encomenda.nome}"></span></p>
-        <p>Nome do Destinatário: <span th:text="${encomenda.nomeDestinatario}"></span></p>
-        <p>Cep de origem: <span th:text="${encomenda.cepOrigem}"></span></p>
-        <p>Cep de destino: <span th:text="${encomenda.cepDestino}"></span></p>
-    </div>
-</div>
+                        <p>Nome do Remetente: <span th:text="${encomenda.nome}"></span></p>
+                        <p>Nome do Destinatário: <span th:text="${encomenda.nomeDestinatario}"></span></p>
+                        <p>Cep de origem: <span th:text="${encomenda.cepOrigem}"></span></p>
+                        <p>Cep de destino: <span th:text="${encomenda.cepDestino}"></span></p>
+                    </div>
+                </div>
                 <div th:each="dias : ${encomenda1}" class="container detalhesEvento2">
-                <p>Chega em <span th:text="${dias}"></span>&nbsp;dias</p>
+                    <p>Chega em <span th:text="${dias}"></span>&nbsp;dias</p>
                 </div>
                 <div th:each="valorFrete : ${encomenda2}" class="container detalhesEvento3">
-                <p>Valor do frete: R$ <span th:text="${valorFrete}"></span></p>
-            </div>
+                    <p>Valor do frete: R$ <span th:text="${valorFrete}"></span></p>
+                </div>
                 <a class="button-control-voltar" href="https://apicalculofrete.herokuapp.com/">
                     <button class="button-control" type="button">Voltar</button>
                 </a>
+            </div>
         </div>
-        </div>
-        </div>
-        </div>
+    </div>
+    </div>
 </section>
 </body>
 </html>
